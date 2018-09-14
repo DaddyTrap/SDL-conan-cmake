@@ -13,6 +13,7 @@ As the repo name says, this is a simple framework of SDL with using conan and cm
 
 ```
 mkdir build && cd build
+conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan # Add bincrafters's packages
 conan install .. # This may take a few minutes
 cmake ..
 ```
