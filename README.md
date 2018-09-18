@@ -13,10 +13,20 @@ As the repo name says, this is a simple framework of SDL with using conan and cm
 
 ```
 mkdir build && cd build
-conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan # Add bincrafters's packages
-conan install .. # This may take a few minutes
+conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
+conan install ..
 cmake ..
 ```
+
+In some circumstances, you should modify the commands above.
+
++ On Windows
+	+ It is recommended to use Visual Studio to build this, because conan may find pre-built package for Visual Studio (but not for MinGW). Then you may use
+		+ `conan install -s compiler="Visual Studio" -s compiler.version=15 ..`
+		+ This specifys the compiler is Visual Studio. Depending on your Visual Studio version, you may modify `compiler.version`. If you use Visual Studio 2017 then the version is `15`, or if you use VS 2015, the version is `14` .
+	+ If you find that `cmake` generated a x86 solution, but you want to generate a x64 solution, you can delete the build directory and repeat the commands above, except changing `cmake ..` to `cmake -G "Visual Studio 15 2017 Win64" ..`
+
+`conan install ..` may take a few minutes.
 
 After `cmake`:
 
