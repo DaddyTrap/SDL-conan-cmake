@@ -1,2 +1,5 @@
 .vscode/
 build/
+
+# for type check
+.mypy_cache/
