@@ -5,5 +5,5 @@ add_definitions("-std=c++14")
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-add_executable(hello hello.cpp)
-target_link_libraries(hello ${CONAN_LIBS})
+add_executable(entrypoint hello.cpp)
+target_link_libraries(entrypoint ${CONAN_LIBS})
