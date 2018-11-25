@@ -11,6 +11,8 @@ try:
 except ImportError:
     pass
 
+# *tuple* means copy from *tuple[0]*(old name) to *tuple[1]*(new name)
+# *str* means keep the original name
 FILES_TO_COPY = [
     '.gitignore', 'conanfile.txt',
     ('hello.cpp', 'main.cpp'),
